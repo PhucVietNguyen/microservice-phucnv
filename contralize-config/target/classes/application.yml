@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/PhucVietNguyen/config-server.git
+          search-paths: '{application}'
+          username: PhucVietNguyen
+          password: '@nhphuc1996'
+          default-label: "master"
+  security:
+    user:
+      name: root
+      password: 1234
+server:
+  port: 8888
