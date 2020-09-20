@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/../registry-service/pom.xml" />
         <option value="$PROJECT_DIR$/../gateway-service/pom.xml" />
         <option value="$PROJECT_DIR$/../oauth-service/pom.xml" />
+        <option value="$USER_HOME$/auth-service-postgres/product-service/pom.xml" />
+        <option value="$USER_HOME$/auth-service-postgres/report-service/pom.xml" />
       </list>
     </option>
   </component>

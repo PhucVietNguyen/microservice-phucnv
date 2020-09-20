@@ -2,10 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="product-service" />
+        <module name="report-service" />
         <module name="contralize-config" />
         <module name="oauth-service" />
         <module name="registry-service" />
@@ -21,7 +24,9 @@
       <module name="contralize-config" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="oauth-service" options="-parameters" />
+      <module name="product-service" options="-parameters" />
       <module name="registry-service" options="-parameters" />
+      <module name="report-service" options="-parameters" />
       <module name="service-oauth2" options="-parameters" />
     </option>
   </component>
