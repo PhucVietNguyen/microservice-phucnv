@@ -11,4 +11,5 @@ public interface ProductService {
 
     List<ProductDto> findAllByCategoryId(Integer categoryId);
     ProductDto findByCode(String code);
+    void sendMessage();
 }

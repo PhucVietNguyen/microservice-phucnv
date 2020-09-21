@@ -8,10 +8,9 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +21,9 @@ public class ReportController {
 
     @Autowired
     private ReportService reportService;
+
+//    @Autowired
+//    private KafkaTemplate<String, String> kafkaTemplate;
 
     @ApiOperation(value = "Lấy danh sách product từ product-service để xuất báo cáo", response = List.class)
     @ApiResponses(value = {
@@ -34,5 +36,20 @@ public class ReportController {
         List<ProductDto> dtoList = reportService.getProductListByCategory(categoryId);
         return ResponseEntity.ok(dtoList);
     }
+
+//    @PostMapping(value = "/demo-kafka/{meg}")
+//    public String demoKafka(@PathVariable String meg){
+//        this.sendMessage(meg);
+//        return "success";
+//    }
+//
+//    public void sendMessage(String meg){
+//        kafkaTemplate.send("demo", meg);
+//    }
+//
+//    @KafkaListener(topics = "demo", groupId = "group-id")
+//    public void listen(String msg) {
+//        System.out.println("Kafka Message in group - group-id: " + msg);
+//    }
 
 }

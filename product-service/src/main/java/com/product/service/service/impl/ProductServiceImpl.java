@@ -36,4 +36,9 @@ public class ProductServiceImpl implements ProductService {
             return new ProductDto(product);
         return null;
     }
+
+    @Override
+    public void sendMessage() {
+        System.out.println("Quartz running success...");
+    }
 }

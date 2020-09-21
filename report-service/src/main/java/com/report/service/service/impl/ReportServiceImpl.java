@@ -27,7 +27,7 @@ public class ReportServiceImpl implements ReportService {
         return productProxy.getAllProductByCategoryId(categoryId);
     }
 
-    public List<ProductDto> failGetProductList() {
+    public List<ProductDto> failGetProductList(Integer categoryId) {
         List<ProductDto> dtoList = new ArrayList<>();
         return dtoList;
     }
