@@ -1,0 +1,107 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - micro-service
+    environment:
+      POSTGRES_PASSWORD: anhphuc1996
+  contralize-config:
+    container_name: contralize-config
+    image: contralize-config:latest
+    build:
+      context: ./contralize-config
+      dockerfile: Dockerfile
+    expose:
+      - 8888
+    networks:
+      - micro-service
+    ports:
+      - "8888:8888"
+    logging:
+      driver: json-file
+    restart: unless-stopped
+  registry-service:
+    container_name: registry-service
+    image: registry-service:latest
+    build:
+      context: ./registry-service
+      dockerfile: Dockerfile
+    expose:
+      - 8761
+    networks:
+      - micro-service
+    ports:
+      - "8761:8761"
+    logging:
+      driver: json-file
+    restart: unless-stopped
+  oauth-service:
+    container_name: oauth-service
+    image: oauth-service:latest
+    build:
+      context: ./oauth-service
+      dockerfile: Dockerfile
+    expose:
+      - 8100
+    networks:
+      - micro-service
+    ports:
+      - "8100:8100"
+    logging:
+      driver: json-file
+    restart: unless-stopped
+  product-service:
+    container_name: product-service
+    image: product-service:latest
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    expose:
+      - 8200
+    networks:
+      - micro-service
+    ports:
+      - "8200:8200"
+    logging:
+      driver: json-file
+    restart: unless-stopped
+  report-service:
+    container_name: report-service
+    image: report-service:latest
+    build:
+      context: ./report-service
+      dockerfile: Dockerfile
+    expose:
+      - 8300
+    networks:
+      - micro-service
+    ports:
+      - "8300:8300"
+    logging:
+      driver: json-file
+    restart: unless-stopped
+  gateway-service:
+    container_name: gateway-service
+    image: gateway-service:latest
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    expose:
+      - 8000
+    networks:
+      - micro-service
+    ports:
+      - "8000:8000"
+    logging:
+      driver: json-file
+    restart: unless-stopped
+networks:
+  micro-service:
+    external:
+      name: micro-service

@@ -7,13 +7,13 @@ import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-public class DemoQuartzJob extends QuartzJobBean {
+public class DemoQuartzJob { //extends QuartzJobBean {
 
-    @Autowired
-    ProductService productService;
-
-    @Override
-    protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        productService.sendMessage();
-    }
+//    @Autowired
+//    ProductService productService;
+//
+//    @Override
+//    protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+//        productService.sendMessage();
+//    }
 }
