@@ -22,6 +22,8 @@ public class ProductClientConfiguration {
     private String clientId;
     @Value("${security.oauth2.client.clientSecret}")
     private String clientSecret;
+    @Value("${security.oauth2.client.grant-type}")
+    private String grantType;
 
     @Bean
     RequestInterceptor oauth2FeignRequestInterceptor() {
@@ -36,10 +38,11 @@ public class ProductClientConfiguration {
     private OAuth2ProtectedResourceDetails resource() {
         ResourceOwnerPasswordResourceDetails resourceDetails = new ResourceOwnerPasswordResourceDetails();
         resourceDetails.setUsername("phucnv");
-        resourceDetails.setPassword("phucpass");
+        resourceDetails.setPassword("password");
         resourceDetails.setAccessTokenUri(accessTokenUri);
         resourceDetails.setClientId(clientId);
         resourceDetails.setClientSecret(clientSecret);
+        //resourceDetails.setGrantType(grantType);
         return resourceDetails;
     }
 }

@@ -1,10 +1,11 @@
 com/mor/service/oauth/service/UserService.class
+com/mor/service/oauth/controller/UserController.class
 com/mor/service/oauth/models/UserEntity.class
 com/mor/service/oauth/config/CustomOauth2RequestFactory.class
 com/mor/service/oauth/config/CustomJdbcTokenStore.class
+com/mor/service/oauth/dto/UserDto.class
 com/mor/service/oauth/models/RoleEntity.class
 com/mor/service/oauth/OAuthApp.class
-com/mor/service/oauth/dto/UserDto.class
 com/mor/service/oauth/service/impl/UserServiceImpl.class
 com/mor/service/oauth/config/OAuth2Configuration.class
 com/mor/service/oauth/models/PermissionEntity.class

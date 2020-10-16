@@ -1,11 +1,11 @@
-com/report/service/service/ReportService.class
 com/report/service/controller/ReportController.class
+com/report/service/service/ReportService.class
 com/report/service/jms/KafkaProducer.class
 com/report/service/config/ResourceServerConfiguration.class
 com/report/service/config/Swagger2Config.class
-com/report/service/service/impl/ReportServiceImpl.class
-com/report/service/proxy/ProductProxy.class
 com/report/service/dto/ProductDto.class
-com/report/service/jms/KafkaConsumer.class
-com/report/service/config/ProductClientConfiguration.class
+com/report/service/proxy/ProductProxy.class
+com/report/service/service/impl/ReportServiceImpl.class
 com/report/service/ReportApp.class
+com/report/service/config/ProductClientConfiguration.class
+com/report/service/jms/KafkaConsumer.class

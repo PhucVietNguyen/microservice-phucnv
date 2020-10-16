@@ -1,5 +1,4 @@
 version: "3"
-
 services:
   postgres:
     image: postgres
@@ -10,7 +9,8 @@ services:
     networks:
       - micro-service
     environment:
-      POSTGRES_PASSWORD: anhphuc1996
+      - POSTGRES_PASSWORD=anhphuc1996
+      - POSTGRES_USER=postgres
   contralize-config:
     container_name: contralize-config
     image: contralize-config:latest
@@ -41,6 +41,8 @@ services:
     logging:
       driver: json-file
     restart: unless-stopped
+    depends_on:
+      - contralize-config
   oauth-service:
     container_name: oauth-service
     image: oauth-service:latest
@@ -56,6 +58,10 @@ services:
     logging:
       driver: json-file
     restart: unless-stopped
+    depends_on:
+      - contralize-config
+      - registry-service
+      - postgres
   product-service:
     container_name: product-service
     image: product-service:latest
@@ -71,6 +77,10 @@ services:
     logging:
       driver: json-file
     restart: unless-stopped
+    depends_on:
+      - contralize-config
+      - registry-service
+      - postgres
   report-service:
     container_name: report-service
     image: report-service:latest
@@ -86,6 +96,10 @@ services:
     logging:
       driver: json-file
     restart: unless-stopped
+    depends_on:
+      - contralize-config
+      - registry-service
+      - postgres
   gateway-service:
     container_name: gateway-service
     image: gateway-service:latest
@@ -101,6 +115,9 @@ services:
     logging:
       driver: json-file
     restart: unless-stopped
+    depends_on:
+      - contralize-config
+      - registry-service
 networks:
   micro-service:
     external:
